@@ -21,22 +21,12 @@
 
   <style>
     .typing-text {
-      display: inline-block;
+      display: block;
       overflow: hidden;
       white-space: nowrap;
       margin: 0;
       font-size: 20px;
       letter-spacing: 4px; /* Adjust spacing as needed */
-      animation: typing 3s steps(25) forwards;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
     }
 
     .blink-caret::after {
@@ -48,6 +38,19 @@
     @keyframes blink-caret {
       50% {
         opacity: 0;
+      }
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 767px) {
+      .typing-text {
+        font-size: 16px;
+      }
+
+      lottie-player {
+        width: 200px;
+        height: 200px;
+        top: 40px;
       }
     }
   </style>
@@ -90,24 +93,42 @@
             <h1 class="h2">04 : Kontakt</h1>
           </div>
 
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1 text-center">
-              <p class="typing-text blink-caret">
-                Hvala! Odgovorim, ko spijem kavo!
-              </p>
-              <!-- Lottie Player -->
-              <lottie-player
-                src="https://lottie.host/0534e456-e4c3-4f94-919f-fc9d56cdaea5/ArJEvQbYCv.json" 
-                background="#FFFFFF"
-                speed="1" 
-                style="width: 300px; height: 300px; position: relative; top: 70px; left: 50%; transform: translateX(-50%);"
-                loop
-                autoplay
-                direction="1" 
-                mode="normal">
-              </lottie-player>
-            </div>
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <p class="typing-text" id="first-line">
+              Hvala! Odgovorim, ko
+            </p>
+            <br>
+            <p class="typing-text" id="second-line">
+              spijem kavo!<span class="blink-caret">|</span>
+            </p>
+            <!-- Lottie Player -->
+            <lottie-player
+              src="https://lottie.host/0534e456-e4c3-4f94-919f-fc9d56cdaea5/ArJEvQbYCv.json" 
+              background="#FFFFFF"
+              speed="1" 
+              style="width: 300px; height: 300px; position: relative; top: 20px; left: 50%; transform: translateX(-50%);"
+              loop
+              autoplay
+              direction="1" 
+              mode="normal">
+            </lottie-player>
           </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function (event) {
+              var firstLine = document.getElementById('first-line');
+              var secondLine = document.getElementById('second-line');
+              var blinkCaret = document.querySelector('.blink-caret');
+
+              firstLine.classList.add('typing-text');
+
+              setTimeout(function() {
+                secondLine.classList.add('typing-text');
+                blinkCaret.style.visibility = 'visible';
+                blinkCaret.style.animation = 'blink-caret 1s infinite';
+              }, 3000); // Delay the second line start
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -128,3 +149,5 @@
 </body>
 
 </html>
+
+
