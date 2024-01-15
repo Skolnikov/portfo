@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
+  <link href="./static/assets/heart.ico" rel="icon">
+
+  <title>Title page</title>
+
+  <link href="./static/main.3f6952e4.css" rel="stylesheet">
+
+  <style>
+    .typing-text {
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 4px; /* Adjust spacing as needed */
+    }
+
+    .blink-caret::after {
+      content: "|";
+      display: inline-block;
+      animation: blink-caret 1s infinite;
+    }
+
+    @keyframes blink-caret {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 767px) {
+      .typing-text {
+        font-size: 16px;
+      }
+
+      lottie-player {
+        width: 200px;
+        height: 200px;
+        top: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body class="">
+  <div id="site-border-left"></div>
+  <div id="site-border-right"></div>
+  <div id="site-border-top"></div>
+  <div id="site-border-bottom"></div>
+  <!-- Add your content of header -->
+  <header>
+    <nav class="navbar  navbar-fixed-top navbar-default">
+      <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav ">
+            <li><a href="./index.html" title="">01 : Domov</a></li>
+            <li><a href="./works.html" title="">02 : Projekti</a></li>
+            <li><a href="./about.html" title="">03 : O meni</a></li>
+            <li><a href="./contact.html" title="">04 : Kontakt</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">04 : Kontakt</h1>
+          </div>
+
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <p class="typing-text" id="first-line">
+              Hvala! Odgovorim, ko
+            </p>
+            <br>
+            <p class="typing-text" id="second-line">
+              spijem kavo!<span class="blink-caret">|</span>
+            </p>
+            <!-- Lottie Player -->
+            <lottie-player
+              src="https://lottie.host/0534e456-e4c3-4f94-919f-fc9d56cdaea5/ArJEvQbYCv.json" 
+              background="#FFFFFF"
+              speed="1" 
+              style="width: 300px; height: 300px; position: relative; top: 20px; left: 50%; transform: translateX(-50%);"
+              loop
+              autoplay
+              direction="1" 
+              mode="normal">
+            </lottie-player>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", function (event) {
+              var firstLine = document.getElementById('first-line');
+              var secondLine = document.getElementById('second-line');
+              var blinkCaret = document.querySelector('.blink-caret');
+
+              firstLine.classList.add('typing-text');
+
+              setTimeout(function() {
+                secondLine.classList.add('typing-text');
+                blinkCaret.style.visibility = 'visible';
+                blinkCaret.style.animation = 'blink-caret 1s infinite';
+              }, 3000); // Delay the second line start
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-container text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>© Vse pravice pridržane | Kevin Školnik <a href='xxx' title="xxx">xxx</a>/<a href="XXX" title="xyx">xxx</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="./static/main.70a66962.js"></script>
+</body>
+
+</html>
+
+
